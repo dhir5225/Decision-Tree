@@ -51,6 +51,8 @@ For instance, in the example below, decision trees learn from data to approximat
 
 6.Parent/Child node: The root node of the tree is called the parent node, and other nodes are called the child nodes.
 
+![image](https://user-images.githubusercontent.com/109084435/201510998-13b1dabd-d5ef-492c-b4cb-f615a17e05cb.png)
+
 #### How does the Decision Tree algorithm Work?
 
 In a decision tree, for predicting the class of the given dataset, the algorithm starts from the root node of the tree. This algorithm compares the values of root attribute with the record (real dataset) attribute and, based on the comparison, follows the branch and jumps to the next node.
@@ -90,6 +92,7 @@ While implementing a Decision tree, the main issue arises that how to select the
 ##### 1.Information Gain
 ##### 2.Gini Index
 ##### 3.Entropy
+##### 4.Chi-Square
 
 #### 1. Information Gain:
 
@@ -120,6 +123,56 @@ While implementing a Decision tree, the main issue arises that how to select the
 Entropy is a measure of the randomness in the information being processed.It is a metric to measure the impurity in a given attribute. The higher the entropy, the harder it is to draw any conclusions from that information. Flipping a coin is an example of an action that provides information that is random.
 
 ##### Entropy(s)= -P(yes)log2 P(yes)- P(no) log2 P(no)
+
+#### 4.Chi-Square
+
+The acronym CHAID stands for Chi-squared Automatic Interaction Detector. It is one of the oldest tree classification methods. It finds out the statistical significance between the differences between sub-nodes and parent node. We measure it by the sum of squares of standardized differences between observed and expected frequencies of the target variable.
+
+It works with the categorical target variable “Success” or “Failure”. It can perform two or more splits. Higher the value of Chi-Square higher the statistical significance of differences between sub-node and Parent node.
+
+It generates a tree called CHAID (Chi-square Automatic Interaction Detector).
+
+Mathematically, Chi-squared is represented as:
+
+![image](https://user-images.githubusercontent.com/109084435/201510670-56350dc0-dbc3-4967-adfb-330412fbdd97.png)
+
+### How to avoid/counter Overfitting in Decision Trees?
+
+The common problem with Decision trees, especially having a table full of columns, they fit a lot. Sometimes it looks like the tree memorized the training data set. If there is no limit set on a decision tree, it will give you 100% accuracy on the training data set because in the worse case it will end up making 1 leaf for each observation. Thus this affects the accuracy when predicting samples that are not part of the training set.
+
+Here are two ways to remove overfitting:
+
+1.Pruning Decision Trees.
+
+2.Random Forest.
+
+### 1.Pruning Decision Trees
+
+The splitting process results in fully grown trees until the stopping criteria are reached. But, the fully grown tree is likely to overfit the data, leading to poor accuracy on unseen data.
+
+In pruning, you trim off the branches of the tree, i.e., remove the decision nodes starting from the leaf node such that the overall accuracy is not disturbed. This is done by segregating the actual training set into two sets: training data set, D and validation data set, V. Prepare the decision tree using the segregated training data set, D. Then continue trimming the tree accordingly to optimize the accuracy of the validation data set, V.
+
+![image](https://user-images.githubusercontent.com/109084435/201510776-9d76e966-ebab-4d4b-874b-bb7e992dadf9.png)
+
+In the above diagram, the ‘Age’ attribute in the left-hand side of the tree has been pruned as it has more importance on the right-hand side of the tree, hence removing overfitting.
+
+### 2.Random Forest
+
+Random Forest is an example of ensemble learning, in which we combine multiple machine learning algorithms to obtain better predictive performance.
+
+##### Why the name “Random”?
+
+Two key concepts that give it the name random:
+
+1.A random sampling of training data set when building trees.
+
+2.Random subsets of features considered when splitting nodes.
+
+A technique known as bagging is used to create an ensemble of trees where multiple training sets are generated with replacement.
+
+In the bagging technique, a data set is divided into N samples using randomized sampling. Then, using a single learning algorithm a model is built on all samples. Later, the resultant predictions are combined using voting or averaging in parallel. 
+
+![image](https://user-images.githubusercontent.com/109084435/201510889-72e53d09-e4b7-4dc8-aca0-8233921be49f.png)
 
 
 
