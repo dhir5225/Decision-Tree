@@ -101,7 +101,7 @@ While implementing a Decision tree, the main issue arises that how to select the
 
 -A decision tree algorithm always tries to maximize the value of information gain, and a node/attribute having the highest information gain is split first. It can be calculated using the below formula:
 
-### Information Gain= Entropy(S)- [(Weighted Avg) *Entropy(each feature)  
+##### Information Gain= Entropy(S)- [(Weighted Avg) *Entropy(each feature)  
 
 #### 2. Gini Index:
 
@@ -113,13 +113,13 @@ While implementing a Decision tree, the main issue arises that how to select the
 
 -Gini index can be calculated using the below formula:
 
-### Gini Index= 1- ∑jPj*2
+##### Gini Index= 1- ∑jPj*2
 
 #### 3.Entropy
 
 Entropy is a measure of the randomness in the information being processed.It is a metric to measure the impurity in a given attribute. The higher the entropy, the harder it is to draw any conclusions from that information. Flipping a coin is an example of an action that provides information that is random.
 
-### Entropy(s)= -P(yes)log2 P(yes)- P(no) log2 P(no)
+##### Entropy(s)= -P(yes)log2 P(yes)- P(no) log2 P(no)
 
 
 
