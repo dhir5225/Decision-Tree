@@ -172,7 +172,8 @@ A technique known as bagging is used to create an ensemble of trees where multip
 
 In the bagging technique, a data set is divided into N samples using randomized sampling. Then, using a single learning algorithm a model is built on all samples. Later, the resultant predictions are combined using voting or averaging in parallel. 
 
-![image](https://user-images.githubusercontent.com/109084435/201510889-72e53d09-e4b7-4dc8-aca0-8233921be49f.png)
+
+
 
 
 
